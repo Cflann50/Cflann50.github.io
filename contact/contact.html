@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>  
+	
+    <!-- link to external CSS-->
+    <link rel="stylesheet" href="../style/style.css">
+	<!-- google fonts, style of font retrieved from https://www.affidea.ie/services/ultrasound/ -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+	<div class="page-wrapper"> <!-- this div had to be added because there was an isolated issue on the contact.html page wherebye the footer would not push to the bottom of the screen. this page wrapper div wraps around the entire page content and applies a flexbox with a minheight: 100vh; to resolve the issue and push the footer down. brainstormed solution retrieved from https://stackoverflow.com/questions/4575826/how-to-push-a-footer-to-the-bottom-of-page-when-content-is-short-or-missing -->
+ 
+    <!-- Header Section -->
+    <header class="header">
+        <a href="../index/index.html" class="logo">
+            <img src="../images/logo-image.png" alt="Clarity Diagnostics Logo">
+        </a>
+        <nav class="nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pregnancy/pregnancy.html">Pregnancy Scans</a></li>
+                <li><a href="../medical/medical.html">Medical Scans</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+	
+
+	
+	<!-- hero image section with transparent overlay located at the top of the page-->
+    <div class="hero-image">
+	
+        <!--image -->
+        <img src="../images/contact-hero-image.png" alt="Friendly consultation" />
+
+        <!-- transparent overlay -->
+        <div class="hero-overlay">
+            <h1>Get In Touch</h1>
+            <p>There are lots of ways you can get in touch with one of our friendly, knowledgeable team.</p>
+        </div>
+    </div>
+
+
+	
+    <!-- info cards section: provides the user with methods they can use to get in touch -->
+	<section class="info-methods">
+
+    
+	<!-- info cards -->
+	<div class="info-cards">
+	
+	    <!-- follow us method -->
+        <div class="info-card">
+		    <img src="../images/follow-icon.png" alt="Follow US on Social Media Icon" />
+            <h2 class="info-title">Follow Us</h2>
+            <p>Stay connected with us through our social media platforms for the latest updates.</p>
+            <button class="info-button" onclick="window.location.href='#footer-social-media'">Follow Us</button>
+        </div>
+		
+		<!-- send us a message method -->
+        <div class="info-card">
+		    <img src="../images/message-icon.png" alt="Book Online Icon" />
+            <h2 class="info-title">Send Us a Message</h2>
+            <p>Do not hesitate to reach out by writing to us. Use our online form to send us your queries.</p>
+            <button class="info-button" onclick="window.location.href='#contact-form'">Contact Us</button>
+        </div>
+		
+		<!-- call us method -->
+		<div class="info-card">
+		    <img src="../images/call-icon.png" alt="Give Us a Call Icon" />
+            <h2 class="info-title">Give Us a Call</h2>
+            <p>If something is unclear, give us a call +123 456 789 to discuss our services.</p>
+            <button class="info-button" onclick="window.location.href='tel:+123456789'">Call Now</button>
+        </div>
+		
+    </div>
+	 
+     <!-- main content container -->
+    <main class="main-content">	
+	
+	   <!-- contact form and map location container -->
+	   <div class="contact-container"> 
+	    
+        <!-- left section: contact form --> 
+        <div class="contact-left">
+		<h1>Contact Us</h1>
+		    
+            <h2>Have a question? Fill out our contact form, and one of our helpful team members will get back to you as soon as possible.</h2>
+			
+			<!-- contact form section  -->
+	        <!-- sytling and components of contact form based on a design used by: https://monashultrasound.com.au/contact-us/ -->  
+              <form id="contactForm"> <!-- form element for submitting contact information -->
+                        <label for="name">Name </label>
+                        <input type="text" id="name" name="name" placeholder="Name" required> <!-- name input -->
+
+                        <label for="email">Email </label>
+                        <input type="email" id="email" name="email" placeholder="Email" required> <!-- email input -->
+
+                        <label for="referral">Do you have a referral?</label>
+                        <!-- Dropdown list yes/no-->
+                        <select id="referral" name="referral" required>
+                            <option value="" disabled selected>Yes/No</option> 
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option> 
+                        
+                        </select>
+
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone number"> <!-- phone number input -->
+
+                        <label for="message">Message </label>
+                        <textarea id="message" name="message" placeholder="Message" rows="4" required></textarea> <!-- message text area input -->
+
+                        <button type="submit">Send</button> <!-- button to submit the form --> 
+                    </form> 
+            </div>
+
+<script src="../scripts/contact-form.js"></script>
+
+        
+            <!-- right section: location map -->
+            <div class="contact-right">
+			    <h1>Our Location</h1>
+                <h2>Visit us at: Clarity Diagnostics, Youghal-Lands, Youghal, Co. Cork, P36 TK28.</h2>
+                <div class="map-container">
+				    <!-- iframe google maps link -->
+				    <iframe 
+                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19671.092249026504!2d-7.867913878250112!3d51.95426060132804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48436d126439a641%3A0xaf9cefade3a9d06c!2sYoughal-Lands%2C%20Youghal%2C%20Co.%20Cork%2C%20P36%20TK28!5e0!3m2!1sen!2sie!4v1732733238263!5m2!1sen!2sie" 
+                         width="600" 
+                         height="450" 
+                         style="border:0;" 
+                         allowfullscreen="" 
+                         loading="lazy" 
+                         referrerpolicy="no-referrer-when-downgrade">
+                     </iframe>
+                </div>
+            </div>
+        </div>
+        
+	</main>
+	
+	</div>  <!-- closes page wrapper -->
+	
+	<!-- footer section -->
+    <footer class="footer"> 
+        <div class="footer-content">
+		
+            <!-- left section: logo and slogan -->
+            <div class="footer-left">
+                <img src="../images/logo-image.png" alt="Clarity Diagnostics Logo" class="footer-logo">
+                <p>Clear Insights, Better Outcomes</p>
+            </div>
+
+            <!-- middle section: quick links -->
+            <div class="footer-middle">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index/index.html">Home</a></li>
+                    <li><a href="../pregnancy/pregnancy.html">Pregnancy Scans</a></li>
+                    <li><a href="../medical/medical.html">Medical Scans</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div> 
+
+            <!-- right Section: contact info, opening hours, and social media -->
+            <div class="footer-right">
+                <h4>Contact Us</h4>
+                <p>Email: <a href="mailto:info@claritydiagnostics.com">info@claritydiagnostics.com</a></p>
+                <p>Phone: <a href="tel:+123456789">+123 456 789</a></p>
+                <h4>Opening Hours</h4>
+                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                <p>Saturday: 9:00 AM - 4:00 PM</p>
+                <p>Sunday: Closed</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><img src="../images/facebook-icon.png" alt="Facebook"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="../images/instagram-icon.png" alt="Instagram"></a>
+                    <a href="https://x.com" target="_blank"><img src="../images/twitter-icon.png" alt="Twitter"></a>
+                    <a href="https://linkedin.com" target="_blank"><img src="../images/linkedin-icon.png" alt="LinkedIn"></a>
+                </div>  
+            </div>
+        </div> 
+    </footer>
+</body>
+</html> 
